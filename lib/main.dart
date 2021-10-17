@@ -10,37 +10,86 @@ class BenimUyg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //theme: ThemeData(fontFamily: 'Satisfy'),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.lime,
+        backgroundColor: Colors.brown[300],
         body: SafeArea(
-          child: Container(
-            //transform: Matrix4.rotationZ(-0.2),
-            width: 200,
-            height: 100,
-            alignment: Alignment.bottomRight,
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadiusDirectional.circular(16.0),
-              color: Colors.white,
-            ),
-            margin: EdgeInsets.symmetric(
-              vertical: 30, horizontal: 35,
-              //margin: EdgeInsets.only(
-              //left: 30,
-              //top: 25,
-            ),
-            padding: EdgeInsets.all(30.0),
-            //color: Colors.white,
-            child: Transform(
-              transform: Matrix4.rotationZ(-0.2),
-              alignment: FractionalOffset.center,
-              child: Text(
-                "GY Creative",
+            child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircleAvatar(
+                radius: 70.0,
+                backgroundColor: Colors.lime,
+                backgroundImage: AssetImage('assets/images/coffee.jpg'),
               ),
-            ),
+              Text(
+                'Flutter Kahvecisi',
+                style: TextStyle(
+                  fontFamily: 'Satisfy',
+                  fontSize: 45,
+                  color: Colors.brown[900],
+                ),
+              ),
+              Text(
+                'BİR FİNCAN UZAĞINIZDA',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
+              ),
+              Container(
+                width: 200,
+                child: Divider(
+                  height: 30.0,
+                  color: Colors.brown[900],
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                ),
+                color: Colors.brown[900],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'siparis@fkahvecisi.com',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                ),
+                color: Colors.brown[900],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.call,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    '+90 555 555 55 55',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ),
+        )),
       ),
     );
   }
